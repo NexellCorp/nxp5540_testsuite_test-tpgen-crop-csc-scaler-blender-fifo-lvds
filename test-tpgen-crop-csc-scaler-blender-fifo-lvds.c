@@ -63,12 +63,22 @@ int main(int argc, char *argv[])
 	strcpy(req.name, "flyby test");
 	req.count = 7;
 	req.array[0] = NXS_FUNCTION_TPGEN;
-	req.array[1] = NXS_FUNCTION_CROPPER;
-	req.array[2] = NXS_FUNCTION_CSC;
-	req.array[3] = NXS_FUNCTION_SCALER_4096;
-	req.array[4] = NXS_FUNCTION_MLC_BLENDER;
-	req.array[5] = NXS_FUNCTION_FIFO;
-	req.array[6] = NXS_FUNCTION_LVDS;
+	req.array[1] = NXS_FUNCTION_ANY;
+	req.array[2] = NXS_FUNCTION_CROPPER;
+	req.array[3] = NXS_FUNCTION_ANY;
+	req.array[4] = NXS_FUNCTION_CSC;
+	req.array[5] = NXS_FUNCTION_ANY;
+	req.array[6] = NXS_FUNCTION_SCALER_4096;
+	req.array[7] = NXS_FUNCTION_ANY;
+	req.array[8] = NXS_FUNCTION_MLC_BLENDER;
+	req.array[9] = NXS_FUNCTION_ANY;
+	req.array[10] = NXS_FUNCTION_FIFO;
+	req.array[11] = NXS_FUNCTION_ANY;
+	req.array[12] = NXS_FUNCTION_LVDS;
+	req.array[13] = 1;
+
+	req.flags |= BLENDING_TO_MINE;
+	req.option.bottom_id = NXS_FUNCTION_ANY;
 
 	ret = nxs_res_manager_request(fd, &req);
 	if (ret) {
