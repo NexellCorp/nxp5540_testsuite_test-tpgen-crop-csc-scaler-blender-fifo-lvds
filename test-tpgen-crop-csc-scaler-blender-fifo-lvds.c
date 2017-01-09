@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
 	req.array[12] = NXS_FUNCTION_LVDS;
 	req.array[13] = 1;
 
-	req.flags |= BLENDING_TO_MINE;
+	req.flags |= BLENDING_TO_BOTTOM;
 	req.option.bottom_id = NXS_FUNCTION_ANY;
 
 	ret = nxs_res_manager_request(fd, &req);
